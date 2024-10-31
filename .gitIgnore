@@ -2,3 +2,6 @@
 ## Ignore compile files in project 
 output.txt
 trigrams.txt
+processedworks.txt
+generatedTextOutPut.txt
+notebook.txt
