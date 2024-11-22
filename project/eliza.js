@@ -25,6 +25,15 @@ document.addEventListener("DOMContentLoaded", () => {
         chatHistory.scrollTop = chatHistory.scrollHeight; // Scroll to the bottom
     }
 
+    // Adds a delay to ELIZA's response
+    function respondWithDelay(input) {
+        const response = getElizaResponse(input);
+        const delay = Math.random() * 1700 + 800; // Generates a random delay between 0.8 and 2.5 seconds
+        setTimeout(() => { 
+            updateChatHistory("eliza", response); // Updates chat history with ELIZA's response
+        }, delay);
+    }
+
 
     sendButton.addEventListener("click", () => {
         const input = userInput.value.trim();
@@ -33,12 +42,11 @@ document.addEventListener("DOMContentLoaded", () => {
         // Update chat history with user input
         updateChatHistory("user", input);
 
-        // Gets ELIZA's response and update chat history
-        const response = getElizaResponse(input);
-        updateChatHistory("eliza", response);
-
         // Clears the input field so the user can type a new message
         userInput.value = "";
+
+        // Gets ELIZA's response and updates the chat history after a delay
+        respondWithDelay(input);
     });
 
 
@@ -48,6 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
         { pattern: /how are you/i, response: "I'm just a program, but I'm doing well. How about you?" },
         { pattern: /i feel (.*)/i, response: "Why do you feel $1?" },
         { pattern: /why (.*)/i, response: "Why do you think $1?" },
+        { pattern: /no/i, response: "Why not?" },
         { pattern: /.*/, response: "Hmm... Tell me more about that." } // Default response
     ];
 
