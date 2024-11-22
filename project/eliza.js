@@ -45,6 +45,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // Array of possible matched patterns and responses for ELIZA
     const elizaResponses = [
         { pattern: /hello|hi/i, response: "Hello! How can I help you today?" },
+        { pattern: /how are you/i, response: "I'm just a program, but I'm doing well. How about you?" },
+        { pattern: /i feel (.*)/i, response: "Why do you feel $1?" },
+        { pattern: /why (.*)/i, response: "Why do you think $1?" },
         { pattern: /.*/, response: "Hmm... Tell me more about that." } // Default response
     ];
 
