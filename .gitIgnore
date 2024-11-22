@@ -1,9 +1,7 @@
 
 ## Ignore compile files in project 
-output.txt
-trigrams.txt
-processedworks.txt
 generatedTextOutPut.txt
-notebook.txt
 trigrams.json
 word_analysis.txt
+combined_processed_text.txt
+combined_trigrams.txt

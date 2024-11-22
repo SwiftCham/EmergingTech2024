@@ -1,93 +1,126 @@
 /* General body styling */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #121212; 
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    color: #e0e0e0; 
-  }
-  
-  /* Chatbot container */
-  #chatbot-container {
-    width: 400px;
-    background-color: #1e1e1e; 
-    border: 1px solid #333; 
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
-    padding: 20px;
-  }
-  
-  /* Headings */
-  h1 {
-    text-align: center;
-    color: #f5f5f5; 
-  }
-  
-  /* Chat history */
-  #chat-history {
-    height: 300px;
-    overflow-y: auto;
-    border: 1px solid #444; 
-    border-radius: 5px;
-    padding: 10px;
-    background-color: #252525; 
-    margin-bottom: 15px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  /* Input section */
-  #chat-input {
-    display: flex;
-    gap: 10px;
-  }
-  
-  #user-input {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #555; 
-    border-radius: 5px;
-    background-color: #2b2b2b; 
-    color: #e0e0e0; 
-  }
-  
-  #user-input::placeholder {
-    color: #888; 
-  }
-  
-  #send-button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #007bff; 
-    color: white;
-    cursor: pointer;
-  }
-  
-  #send-button:hover {
-    background-color: #0056b3; 
-  }
-  
-  /* Message styling */
-  .user-message {
-    align-self: flex-start;
-    background-color: #00bcd4; 
-    color: #000; 
-    padding: 10px;
-    border-radius: 10px;
-    max-width: 70%;
-  }
-  
-  .eliza-message {
-    align-self: flex-end;
-    background-color: #d35400; 
-    color: #fff; 
-    padding: 10px;
-    border-radius: 10px;
-    max-width: 70%;
-  }
+  font-family: Arial, sans-serif;
+  background-color: #121212; 
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #e0e0e0; 
+}
+
+/* Chatbot container */
+#chatbot-container {
+  width: 400px;
+  background-color: #1e1e1e; 
+  border: 1px solid #333; 
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Headings */
+h1 {
+  text-align: center;
+  color: #f5f5f5; 
+}
+
+/* Chat history */
+#chat-history {
+  height: 300px;
+  overflow-y: auto;
+  border: 1px solid #444; 
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #252525; 
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Input section */
+#chat-input {
+  display: flex;
+  gap: 10px;
+}
+
+#user-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #555; 
+  border-radius: 5px;
+  background-color: #2b2b2b; 
+  color: #e0e0e0; 
+}
+
+#user-input::placeholder {
+  color: #888; 
+}
+
+#send-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff; 
+  color: white;
+  cursor: pointer;
+}
+
+#send-button:hover {
+  background-color: #0056b3; 
+}
+
+/* Message styling */
+.user-message-wrapper,
+.eliza-message-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.eliza-message-wrapper {
+  align-items: flex-end;
+}
+
+/* Sender name styles */
+.sender-name {
+  font-family: "Georgia", serif;
+  font-size: 12px;
+  color: #888;
+  font-style: italic;
+  margin-bottom: -5px; 
+}
+
+/* Chat bubbles */
+.user-message {
+  align-self: flex-start;
+  background-color: #00bcd4; 
+  color: #000; 
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 70%;
+  word-wrap: break-word; 
+}
+
+.eliza-message {
+  align-self: flex-end;
+  background-color: #d35400; 
+  color: #fff; 
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 70%;
+  word-wrap: break-word; /
+}
+
+/* Typing indicator */
+.typing-indicator {
+  font-style: italic;
+  color: #aaa;
+}
