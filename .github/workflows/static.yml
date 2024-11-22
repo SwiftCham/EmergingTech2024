@@ -15,14 +15,13 @@ permissions:
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+# Allow only one concurrent deployment
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
-  # Single deploy job since we're just deploying
+  # Single deploy job
   deploy:
     environment:
       name: github-pages
@@ -33,11 +32,13 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      - name: Move files to root
+        run: |
+          mv eliza/* .  # Move all files from the eliza directory to the root
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload eliza directory
-          path: './eliza'
+          path: '.'  # Upload everything now in the root
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
