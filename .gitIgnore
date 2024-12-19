@@ -1,7 +1,7 @@
 
 ## Ignore compile files in project 
 generatedTextOutPut.txt
-trigrams.json
 word_analysis.txt
 combined_processed_text.txt
 combined_trigrams.txt
+bin.md
